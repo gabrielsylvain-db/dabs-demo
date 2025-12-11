@@ -1,0 +1,13 @@
+# The main pipeline for dabs_demo
+resources:
+  pipelines:
+    dabs_demo_pipeline:
+      name: dabs_demo_pipeline
+      catalog: gsyl_demo_ws
+      schema: dabs_demo_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
