@@ -11,7 +11,9 @@ def get_taxis(spark: SparkSession) -> DataFrame:
 def get_spark() -> SparkSession:
     try:
         from databricks.connect import DatabricksSession
-
+        
+        # Uncomment this to use a serverless profile that is not the default one.
+        # return DatabricksSession.builder.serverless().profile("gsyl_demo_ws").getOrCreate()
         return DatabricksSession.builder.getOrCreate()
     except ImportError:
         return SparkSession.builder.getOrCreate()

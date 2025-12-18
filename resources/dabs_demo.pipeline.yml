@@ -3,7 +3,7 @@ resources:
   pipelines:
     dabs_demo_pipeline:
       name: dabs_demo_pipeline
-      catalog: gsyl_demo_ws
+      catalog: gsyl_demo_catalog
       schema: dabs_demo_${bundle.target}
       libraries:
         - notebook:
